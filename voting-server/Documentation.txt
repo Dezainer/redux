@@ -1,0 +1,37 @@
+Documentation
+
+	Redux 
+		Base Concept
+			Works by mutating objects by creating new ones instead of making changes in the existing ones.
+			The new One, is basically the old object with the changes.
+			But th old keeps the same always.
+
+		Pure Functions 
+			Functions that take data and return data, nothing elese.
+
+		Stores
+			They store(as the name already explains) the state of your application over time.
+
+		Server
+			Basicaly in this server method, you can bind stuff and the client shall always be synced with the state of the store throught the server(or something like that...).
+
+			It basically works like this:
+				- A client sends an action to the server.
+				- The server hands the action to the Redux Store.
+				- The Store calls the reducer and the reducer executes the logic related to the action.
+				- The Store updates its state based on the return value of the reducer.
+				- The Store executes the listener function subscribed by the server.
+				- The server emits a 'state' event.
+				- All connected clients - including the one that initiated the original action - receive the new state.
+
+		React
+			Here we will be written componentes as "dumb components", wich are similar to pure functions. They follow this rules:
+				- A pure component receives all its data as props, like a function receives all its data as arguments. It should have no side effects, including reading data from anywhere else, initiating network requests, etc.
+				- A pure component generally has no internal state. What it renders is fully driven by its input props. Rendering the same pure component twice with the same props should result in the same UI. There's no hidden state inside the component that would cause the UI to differ between the two renders.
+
+			This similarity with pure functions is: We can figure out what a component does by looking at what it receives as inputs and what it renders. There's nothing else we need to know about the component. We can also test it really easily - almost as easily as we were able to test our pure application logic.
+
+
+
+Credits to:
+	http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html
